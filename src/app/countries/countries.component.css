@@ -1,0 +1,40 @@
+.country-card {
+    margin-right: 60px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+    float: left;
+ 
+}
+.country-cards{
+    
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    
+}
+.fixheight{
+    max-height: 90vh;
+    overflow: scroll;
+}
+.countries-info{
+    font-weight: 600;
+    font-size: 14px;
+    color: hsl(209, 23%, 22%);
+}
+.card-title{
+    font-weight: bold;
+    color:  hsl(204, 26%, 4%)
+   
+
+}
+.card-text{
+    font-weight: 500;
+    color:  hsl(0, 0%, 52%);
+  
+    font-size: 14px !important
+}
+.parent-body{
+    background-color: hsl(0, 0%, 98%);  
+}
+.content-body{
+    margin-left:4rem;
+    margin-right: 4rem;
+}

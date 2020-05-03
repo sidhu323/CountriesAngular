@@ -1,0 +1,36 @@
+.heading{
+    background-color: white;
+    z-index: 10;
+    height: 58px;
+    box-shadow: 0px 2px 3px 0px rgba(222,213,222,1);
+    align-items: center;
+    
+}
+.parent-body{
+    background-color: hsl(0, 0%, 98%);  
+}
+.logo{
+font-weight: 900;
+margin-left:4rem;
+font-size: 20px;
+padding: 14px 0px 0px 0px;
+
+}
+.mode{
+font-weight: 600;
+margin-right: 4rem;
+font-size: 14px;
+padding: 14px 0px 0px 0px;
+}
+.content-body{
+    margin-left:4rem;
+    margin-right: 4rem;
+}
+@media screen and (max-width: 500px) {
+    .mode{
+        font-weight: 600;
+        margin-right: 4rem;
+        font-size: 14px;
+        line-height: 3.5;
+        }
+  }

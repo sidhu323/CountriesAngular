@@ -1,0 +1,40 @@
+<div class="parent-body mt-1">
+<div class="content-body">
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+              <input type="text"
+                class="form-control" name="" id=""  [(ngModel)]="filterBy" (keyup)="filterCountry($event)"  aria-describedby="helpId" placeholder="🔍 Search for a country">
+            </div>
+        </div>
+        <div class="col">
+            <!-- <ng-select
+                [items]="regionOptions"
+                placeholder="Filter By Region"
+            ></ng-select> -->
+          
+        </div>
+    </div>
+    <div class="row justify-content-between fixheight">
+       
+        <div class="card  m-3 country-cards border" style="width: 15rem;" *ngFor="let country of countries">
+            <img src="{{country.flag}}"class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+              <p class="card-title">{{country.name}}</p>
+              <p class="card-text"><span class="countries-info">Population:</span></p>
+              <p class="card-text"><span class="countries-info">Region:</span>{{country.region}}</p>
+              <p class="card-text"><span class="countries-info">Capital:</span>{{country.subregion}}</p>
+              <a href="/country/{{getValidPath(country['name'])}}" class="stretched-link"></a>
+            </div>
+    
+    </div>
+    
+    </div>   
+</div>
+     
+
+</div> 
+
+
+
+

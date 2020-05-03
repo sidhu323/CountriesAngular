@@ -1,0 +1,52 @@
+.btn-country{
+    padding: 2px 18px;
+    background-color: white;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.content-body{
+    margin-left:4rem;
+    margin-right: 4rem;
+}
+.country-info{
+    display: flex;
+    
+    align-self: center;
+}
+.country-complete-info{
+    margin-left: 3rem;
+    align-self: center;
+
+}
+.border-country-name{
+    padding: 3px 32px;
+    border: 4px solid  hsl(0, 0%, 98%);
+    margin: 4px;
+    border-radius: 3px 5px;
+}
+.country-info-two{
+margin-left: 4rem;
+}
+.country-name{
+    font-weight: bold;
+}
+.counntry-info-title{
+    font-size: 14px;
+    font-weight: bolder;
+    margin: 6px 0;
+    color: hsl(209, 23%, 22%);
+    white-space: nowrap;
+
+}
+.counntry-info-value{
+    font-weight: 500;
+    color:  hsl(0, 0%, 52%)
+}
+.border-country-name{
+    font-size: 14px;
+}
+.borders{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}

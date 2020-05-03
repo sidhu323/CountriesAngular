@@ -1,0 +1,49 @@
+
+
+<div class="parent-body">
+    <div class="content-body">
+        <div class="row mt-4">
+            <div class="col">
+              <button type="button" class="btn btn-country">&#8592;Back</button>
+            </div>
+            
+        </div>
+    
+        <div class="row mt-5" *ngFor="let country of country">
+            <div class="col-lg-4 col-md-6 col-12">
+                <img src="{{country.flag}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+            </div>
+            <div class="col col-md-6 col-12 country-complete-info">
+                <h4 class="country-name">{{country.name}}</h4>
+                 <div class="country-info">
+                     <div class="country-info-one">
+                        <ul class="p-0 list-unstyled">
+                            <li class="counntry-info-title">Native Name:<span class="counntry-info-value"> {{country.nativeName}}</span></li>
+                            <li class="counntry-info-title">Population:<span class="counntry-info-value"> {{country.population}}</span></li>
+                            <li class="counntry-info-title">Region:<span class="counntry-info-value"> {{country.region}}</span></li>
+                            <li class="counntry-info-title">Sub Region:<span class="counntry-info-value"> {{country.subregion}}</span></li>
+                            <li class="counntry-info-title">Capital:<span class="counntry-info-value"> {{country.capital}}</span></li>
+                          </ul>  
+                     </div>
+                     <div class="country-info-two">
+                        <ul class="p-0 list-unstyled">
+                            <li class="counntry-info-title">Top Level Domain:<span class="counntry-info-value"> BElgie</span></li>
+                            <li class="counntry-info-title">Currencies:<span class="counntry-info-value"> 12.131313</span></li>
+                            <li class="counntry-info-title">Languages:<span class="counntry-info-value"> Europe</span></li>
+                           
+                          </ul> 
+                     </div>
+                 </div>
+                 
+                 <div class="borders">
+                     <span class="counntry-info-title">Border Countries:</span>
+                     <span  *ngFor="let item of country['borders']" class="border-country-name" >{{item}}</span>
+                 
+                 </div>
+            </div>
+           
+        </div>
+    </div>
+   
+</div>
+  
