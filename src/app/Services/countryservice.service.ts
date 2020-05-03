@@ -17,4 +17,7 @@ export class CountryserviceService {
   getCountryByRegion(region){
     return this.httpClient.get(`${this.API_URL}/region/${region}`)
   }
+  getfilterWiseCountry(name,capital,currencies){
+    return this.httpClient.get(`${this.API_URL}/all?fields=${name};${capital};${currencies}`);
+  }
 }

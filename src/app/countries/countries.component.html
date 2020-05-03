@@ -3,8 +3,11 @@
     <div class="row">
         <div class="col">
             <div class="form-group">
-              <input type="text"
+              <!-- <input type="text"
                 class="form-control" name="" id=""  [(ngModel)]="filterBy" (keyup)="filterCountry($event)"  aria-describedby="helpId" placeholder="🔍 Search for a country">
+            </div> -->
+            <input type="text"
+                class="form-control" name="" id=""  [(ngModel)]="searchCountry"  (ngModelChange)="search($event)" aria-describedby="helpId" placeholder="🔍 Search for a country">
             </div>
         </div>
         <div class="col">
@@ -12,11 +15,16 @@
                 [items]="regionOptions"
                 placeholder="Filter By Region"
             ></ng-select> -->
+            <select [(ngModel)]="regionSelected" (ngModelChange)="onRegionSelected($event)">
+                <option *ngFor="let item of regionOptions" [value]="item.name">
+                    {{item.name}}
+                </option>
+            </select>
+            
           
         </div>
     </div>
     <div class="row justify-content-between fixheight">
-       
         <div class="card  m-3 country-cards border" style="width: 15rem;" *ngFor="let country of countries">
             <img src="{{country.flag}}"class="card-img-top img-fluid" alt="...">
             <div class="card-body">

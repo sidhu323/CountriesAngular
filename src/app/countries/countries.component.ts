@@ -11,6 +11,8 @@ export class CountriesComponent implements OnInit {
   countries;
   filterBy;
   allCountries;
+  currentRegion;
+  searchCountry;
   public regionOptions = Region.regions;
   filteredCountries: any[];
   constructor(private countryService:CountryserviceService) { }
@@ -25,12 +27,17 @@ public getCountries(){
 
   })
 } 
-filterCountry($event){
-  const countriesList = [...this.allCountries];
-  const dataFilter = [...this.countries.filter(country=>(country.name.toLowerCase().includes($event.target.value.toLowerCase())))];
-  this.countries = ($event.target.value.length>0)?[...dataFilter]:[...countriesList];
+// filterCountry($event){
+//   const countriesList = [...this.allCountries];
+//   const dataFilter = [...this.countries.filter(country=>(country.name.toLowerCase().includes($event.target.value.toLowerCase())))];
+//   this.countries = ($event.target.value.length>0)?[...dataFilter]:[...countriesList]; 
+// }
+ search(searchCountry){
 
-  
+  this.countryService.getfilterWiseCountry(searchCountry,'','').subscribe(data=>{
+    this.countries = data;
+    console.log('hl',this.currentRegion)
+  })
 }
 
   getValidPath (name): string {
@@ -40,4 +47,12 @@ filterCountry($event){
     }
     return name
   } 
+
+
+  onRegionSelected(selectRegionName:any):void{
+    this.countryService.getCountryByRegion(selectRegionName).subscribe(data=>{
+      this.countries = data;
+      console.log('hl',this.currentRegion)
+    })
+  }
 }

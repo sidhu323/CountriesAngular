@@ -4,7 +4,7 @@
     <div class="content-body">
         <div class="row mt-4">
             <div class="col">
-              <button type="button" class="btn btn-country">&#8592;Back</button>
+              <button type="button" [routerLink]="['/countries']" routerLinkActive="router-link-active"  class="btn btn-country">&#8592;Back</button>
             </div>
             
         </div>
@@ -37,7 +37,7 @@
                  
                  <div class="borders">
                      <span class="counntry-info-title">Border Countries:</span>
-                     <span  *ngFor="let item of country['borders']" class="border-country-name" >{{item}}</span>
+                     <a href="/country/{{getValidPath(country['name'])}}" *ngFor="let item of country['borders']" class="border-country-name" >{{item}}</a>
                  
                  </div>
             </div>

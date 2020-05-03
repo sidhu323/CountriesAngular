@@ -26,4 +26,11 @@ export class CountriesDetailComponent implements OnInit {
       console.log('faf',this.borders);
     });
   }
+  getValidPath (name): string {
+    let matchFailsUrl = ['(', ')'];
+    for (let i = 0; i < matchFailsUrl.length; i++) {
+      name = name.replace(matchFailsUrl[i], '');      
+    }
+    return name
+  } 
 }
