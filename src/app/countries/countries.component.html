@@ -1,33 +1,23 @@
-<div class="parent-body mt-1">
+<div class="parent-body ">
 <div class="content-body">
-    <div class="row">
-        <div class="col">
+    <div class="row filteration">
+        <div class="col-lg-4">
             <div class="form-group">
               <!-- <input type="text"
                 class="form-control" name="" id=""  [(ngModel)]="filterBy" (keyup)="filterCountry($event)"  aria-describedby="helpId" placeholder="🔍 Search for a country">
             </div> -->
             <input type="text"
-                class="form-control" name="" id=""  [(ngModel)]="searchCountry"  (ngModelChange)="search($event)" aria-describedby="helpId" placeholder="🔍 Search for a country">
+                class="form-control searchcountry" name="" id=""  [(ngModel)]="searchCountry"  (ngModelChange)="search($event)" aria-describedby="helpId" placeholder="🔍   Search for a country">
             </div>
         </div>
-        <div class="col">
+        <div class="col-lg-2">
         <div class="form-group">
-            <!-- <select class="selectpicker" [(ngModel)]="regionSelected" (ngModelChange)="onRegionSelected($event)">
-                <option *ngFor="let item of regionOptions" [value]="item.name">
-                    {{item.name}}
-                </option>
-            </select> -->
-
-            <ng-select [items]="regionOptions"
+            <ng-select class="custom" [items]="regionOptions"
                    bindLabel="name"
                    placeholder="Filter By Region"
                    [(ngModel)]="regionSelected">
             </ng-select>
         </div>
-
-            
-            
-          
         </div>
     </div>
     <div class="row justify-content-between fixheight">
@@ -45,8 +35,6 @@
     
     </div>   
 </div>
-     
-
 </div> 
 
 

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountriesDetailComponent } from './countries-detail/countries-detail.component';
-import { NgSelectModule } from '@ng-select/ng-select';
+import { NgSelectModule ,NgOption} from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgSelectModule
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
