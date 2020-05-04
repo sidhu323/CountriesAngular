@@ -37,7 +37,7 @@
                  
                  <div class="borders">
                      <span class="counntry-info-title">Border Countries:</span>
-                     <a href="/country/{{getValidPath(country['name'])}}" *ngFor="let item of country['borders']" class="border-country-name" >{{item}}</a>
+                     <button (click)="getBorderCountries($event)" *ngFor="let item of country['borders']" class="border-country-name" >{{item}}</button>
                  
                  </div>
             </div>

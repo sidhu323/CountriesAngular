@@ -20,4 +20,7 @@ export class CountryserviceService {
   getfilterWiseCountry(name,capital,currencies){
     return this.httpClient.get(`${this.API_URL}/all?fields=${name};${capital};${currencies}`);
   }
+  getBorderCountriesDetail(code){
+    return this.httpClient.get(`${this.API_URL}/alpha/${code}`);
+  }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryserviceService } from './../Services/countryservice.service';
-import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ActivatedRoute ,Router} from '../../../node_modules/@angular/router';
 @Component({
   selector: 'app-countries-detail',
   templateUrl: './countries-detail.component.html',
@@ -9,9 +9,11 @@ import { ActivatedRoute } from '../../../node_modules/@angular/router';
 export class CountriesDetailComponent implements OnInit {
    public country;
    public borders=[];
+   public borderCountry;
   constructor(
     private countryService:CountryserviceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router:Router
     ) { }
 
   ngOnInit() {
@@ -26,11 +28,12 @@ export class CountriesDetailComponent implements OnInit {
       console.log('faf',this.borders);
     });
   }
-  getValidPath (name): string {
-    let matchFailsUrl = ['(', ')'];
-    for (let i = 0; i < matchFailsUrl.length; i++) {
-      name = name.replace(matchFailsUrl[i], '');      
-    }
-    return name
-  } 
+  
+  getBorderCountries($e){
+    console.log('border',$e.srcElement.innerText);
+    this.countryService.getBorderCountriesDetail($e.srcElement.innerText).subscribe((data)=>{
+      this.borderCountry = data;
+      // this.router.navigate([`country/${this.borderCountry.name}`]);
+    })
+  }
 }

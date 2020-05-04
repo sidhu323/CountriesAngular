@@ -14,7 +14,9 @@ const routes: Routes = [
   {
     path:'country/:name',
     component:CountriesDetailComponent
-  }
+  },
+
+ 
 ];
 
 @NgModule({
