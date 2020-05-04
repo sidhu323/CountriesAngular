@@ -13,6 +13,7 @@ export class CountriesComponent implements OnInit {
   allCountries;
   currentRegion;
   searchCountry;
+  regionSelected;
   public regionOptions = Region.regions;
   filteredCountries: any[];
   constructor(private countryService:CountryserviceService) { }
@@ -26,12 +27,12 @@ public getCountries(){
     this.allCountries = data; 
 
   })
-} 
-// filterCountry($event){
-//   const countriesList = [...this.allCountries];
-//   const dataFilter = [...this.countries.filter(country=>(country.name.toLowerCase().includes($event.target.value.toLowerCase())))];
-//   this.countries = ($event.target.value.length>0)?[...dataFilter]:[...countriesList]; 
-// }
+}  
+filterCountry($event){
+  const countriesList = [...this.allCountries];
+  const dataFilter = [...countriesList.filter(country=>(country.name.toLowerCase().includes($event.target.value.toLowerCase())))];
+  this.countries = ($event.target.value.length>0)?[...dataFilter]:[...countriesList]; 
+}
  search(searchCountry){
 
   this.countryService.getfilterWiseCountry(searchCountry,'','').subscribe(data=>{
