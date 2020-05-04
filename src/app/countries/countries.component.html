@@ -15,7 +15,9 @@
             <ng-select class="custom" [items]="regionOptions"
                    bindLabel="name"
                    placeholder="Filter By Region"
-                   [(ngModel)]="regionSelected">
+                   [(ngModel)]="regionSelected"
+                   (change)="onRegionSelected(regionSelected)"
+                   (clear)="clearFilter()">
             </ng-select>
         </div>
         </div>

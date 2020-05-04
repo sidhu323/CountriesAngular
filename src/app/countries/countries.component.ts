@@ -13,7 +13,7 @@ export class CountriesComponent implements OnInit {
   allCountries;
   currentRegion;
   searchCountry;
-  regionSelected;
+  regionSelected:any;
   public regionOptions = Region.regions;
   filteredCountries: any[];
   constructor(private countryService:CountryserviceService) { }
@@ -34,7 +34,6 @@ filterCountry($event){
   this.countries = ($event.target.value.length>0)?[...dataFilter]:[...countriesList]; 
 }
  search(searchCountry){
-
   this.countryService.getfilterWiseCountry(searchCountry,'','').subscribe(data=>{
     this.countries = data;
   })
@@ -50,8 +49,12 @@ filterCountry($event){
 
 
   onRegionSelected(selectRegionName:any):void{
-    this.countryService.getCountryByRegion(selectRegionName).subscribe(data=>{
+    console.log('this is os',selectRegionName);
+    this.countryService.getCountryByRegion(selectRegionName.name).subscribe(data=>{
       this.countries = data;
     })
+  }
+  clearFilter(){
+  this.getCountries()
   }
 }

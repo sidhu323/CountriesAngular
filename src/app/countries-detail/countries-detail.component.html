@@ -11,18 +11,18 @@
     
         <div class="row mt-5" >
             <div class="col-lg-4 col-md-6 col-12">
-                <img src="{{country.flag}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
+                <img src="{{country?.flag}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
             </div>
             <div class="col col-md-6 col-12 country-complete-info">
-                <h4 class="country-name">{{country.name}}</h4>
+                <h4 class="country-name">{{country?.name}}</h4>
                  <div class="country-info">
                      <div class="country-info-one">
                         <ul class="p-0 list-unstyled">
-                            <li class="counntry-info-title">Native Name:<span class="counntry-info-value"> {{country.nativeName}}</span></li>
-                            <li class="counntry-info-title">Population:<span class="counntry-info-value"> {{country.population}}</span></li>
-                            <li class="counntry-info-title">Region:<span class="counntry-info-value"> {{country.region}}</span></li>
-                            <li class="counntry-info-title">Sub Region:<span class="counntry-info-value"> {{country.subregion}}</span></li>
-                            <li class="counntry-info-title">Capital:<span class="counntry-info-value"> {{country.capital}}</span></li>
+                            <li class="counntry-info-title">Native Name:<span class="counntry-info-value"> {{country?.nativeName}}</span></li>
+                            <li class="counntry-info-title">Population:<span class="counntry-info-value"> {{country?.population}}</span></li>
+                            <li class="counntry-info-title">Region:<span class="counntry-info-value"> {{country?.region}}</span></li>
+                            <li class="counntry-info-title">Sub Region:<span class="counntry-info-value"> {{country?.subregion}}</span></li>
+                            <li class="counntry-info-title">Capital:<span class="counntry-info-value"> {{country?.capital}}</span></li>
                           </ul>  
                      </div>
                      <div class="country-info-two">
@@ -35,7 +35,7 @@
                      </div>
                  </div>
                  
-                 <div class="borders">
+                 <div class="borders ">
                      <span class="counntry-info-title">Border Countries:</span>
 
                      <button  [routerLink]="['/countries', item.alpha3Code]" *ngFor="let item of borders" class="border-country-name" >{{item.name}}</button>

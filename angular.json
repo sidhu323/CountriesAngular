@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "countries"
+    }
+  },
+  "defaultProject": "countries",
+  "cli": {
+    "analytics": false
+  }
 }
