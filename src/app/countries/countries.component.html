@@ -11,15 +11,21 @@
             </div>
         </div>
         <div class="col">
-            <!-- <ng-select
-                [items]="regionOptions"
-                placeholder="Filter By Region"
-            ></ng-select> -->
-            <select [(ngModel)]="regionSelected" (ngModelChange)="onRegionSelected($event)">
+        <div class="form-group">
+            <!-- <select class="selectpicker" [(ngModel)]="regionSelected" (ngModelChange)="onRegionSelected($event)">
                 <option *ngFor="let item of regionOptions" [value]="item.name">
                     {{item.name}}
                 </option>
-            </select>
+            </select> -->
+
+            <ng-select [items]="regionOptions"
+                   bindLabel="name"
+                   placeholder="Filter By Region"
+                   [(ngModel)]="regionSelected">
+            </ng-select>
+        </div>
+
+            
             
           
         </div>
