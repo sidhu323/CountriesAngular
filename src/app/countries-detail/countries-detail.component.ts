@@ -10,30 +10,45 @@ export class CountriesDetailComponent implements OnInit {
    public country;
    public borders=[];
    public borderCountry;
+  //  public code = this.route.snapshot.paramMap.get('alpha3Code');
   constructor(
     private countryService:CountryserviceService,
     private route: ActivatedRoute,
     private router:Router
-    ) { }
+    ) {
+      this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+     }
 
   ngOnInit() {
     this.getCountry();
   }
 
   getCountry(): void {
-    const name = this.route.snapshot.paramMap.get('name');
-    this.countryService.getSpecificCountryByName(name).subscribe((data) => {
+    const code = this.route.snapshot.paramMap.get('alpha3Code');
+    this.countryService.getSpecificCountryByAlpha(code).subscribe((data) => {
       this.country = data;
       this.borders = this.country.borders;
-      console.log('faf',this.borders);
-    });
+      this.getBorderData();
+    })
   }
   
-  getBorderCountries($e){
-    console.log('border',$e.srcElement.innerText);
-    this.countryService.getBorderCountriesDetail($e.srcElement.innerText).subscribe((data)=>{
-      this.borderCountry = data;
-      // this.router.navigate([`country/${this.borderCountry.name}`]);
-    })
+  // getBorderCountries(item){
+  //   // console.log('border',$e.srcElement.innerText);
+  //   // this.countryService.getBorderCountriesDetail($e.srcElement.innerText).subscribe((data)=>{
+  //   //   this.borderCountry = data;
+  //     this.router.navigate([`countries/${item}`]);
+  // //   })
+  // }
+  getBorderData():void{
+    let bordersData = []
+      this.borders.map(borderAlpha=>{
+        this.countryService.getSpecificCountryByAlpha(borderAlpha).subscribe((data)=>{
+          console.log('received border data', data)
+          bordersData.push(data)
+          console.log(bordersData)
+          this.borders=[...bordersData]
+        })
+        console.log('bordre', this.borders)
+      })
   }
 }

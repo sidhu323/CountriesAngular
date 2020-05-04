@@ -37,23 +37,21 @@ filterCountry($event){
 
   this.countryService.getfilterWiseCountry(searchCountry,'','').subscribe(data=>{
     this.countries = data;
-    console.log('hl',this.currentRegion)
   })
 }
 
-  getValidPath (name): string {
-    let matchFailsUrl = ['(', ')'];
-    for (let i = 0; i < matchFailsUrl.length; i++) {
-      name = name.replace(matchFailsUrl[i], '');      
-    }
-    return name
-  } 
+  // getValidPath (name): string {
+  //   let matchFailsUrl = ['(', ')'];
+  //   for (let i = 0; i < matchFailsUrl.length; i++) {
+  //     name = name.replace(matchFailsUrl[i], '');      
+  //   }
+  //   return name
+  // } 
 
 
   onRegionSelected(selectRegionName:any):void{
     this.countryService.getCountryByRegion(selectRegionName).subscribe(data=>{
       this.countries = data;
-      console.log('hl',this.currentRegion)
     })
   }
 }

@@ -12,7 +12,7 @@ const routes: Routes = [
     component:CountriesComponent
   },
   {
-    path:'country/:name',
+    path:'countries/:alpha3Code',
     component:CountriesDetailComponent
   },
 

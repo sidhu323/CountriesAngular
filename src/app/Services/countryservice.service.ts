@@ -11,8 +11,8 @@ export class CountryserviceService {
   getAllCountries(){
     return this.httpClient.get(`${this.API_URL}/all`)
   }
-  getSpecificCountryByName(name){
-    return this.httpClient.get(`${this.API_URL}/name/${name}`)
+  getSpecificCountryByAlpha(alpha3Code){
+    return this.httpClient.get(`${this.API_URL}/alpha/${alpha3Code}`)
   }
   getCountryByRegion(region){
     return this.httpClient.get(`${this.API_URL}/region/${region}`)

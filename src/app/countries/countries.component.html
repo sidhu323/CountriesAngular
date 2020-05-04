@@ -28,7 +28,7 @@
               <p class="card-text"><span class="countries-info">Population:</span></p>
               <p class="card-text"><span class="countries-info">Region:</span>{{country.region}}</p>
               <p class="card-text"><span class="countries-info">Capital:</span>{{country.subregion}}</p>
-              <a href="/country/{{getValidPath(country['name'])}}" class="stretched-link"></a>
+              <a  [routerLink]="['/countries', country['alpha3Code']]" class="stretched-link"></a>
             </div>
     
     </div>

@@ -9,7 +9,7 @@
             
         </div>
     
-        <div class="row mt-5" *ngFor="let country of country">
+        <div class="row mt-5" >
             <div class="col-lg-4 col-md-6 col-12">
                 <img src="{{country.flag}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
             </div>
@@ -37,8 +37,8 @@
                  
                  <div class="borders">
                      <span class="counntry-info-title">Border Countries:</span>
-                     <button (click)="getBorderCountries($event)" *ngFor="let item of country['borders']" class="border-country-name" >{{item}}</button>
-                 
+
+                     <button  [routerLink]="['/countries', item.alpha3Code]" *ngFor="let item of borders" class="border-country-name" >{{item.name}}</button>
                  </div>
             </div>
            
