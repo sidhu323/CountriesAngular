@@ -23,8 +23,8 @@
         </div>
     </div>
     <div class="row justify-content-between d-flex fixheight">
-       
-            <div class="card  m-3 country-cards border" style="width: 15rem;" *ngFor="let country of countries">
+          <div class="col-lg-3 col-sm-12 col-12"  *ngFor="let country of countries">
+            <div class="card m-3 country-cards border">
                 <img src="{{country.flag}}"class="card-img-top img-fluid" alt="...">
                 <div class="card-body">
                   <p class="card-title">{{country.name}}</p>
@@ -33,9 +33,8 @@
                   <p class="card-text"><span class="countries-info">Capital:</span>{{country.subregion}}</p>
                   <a  [routerLink]="['/countries', country['alpha3Code']]" class="stretched-link"></a>
                 </div>
-        
-     
         </div>
+          </div>
 
         
      
