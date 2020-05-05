@@ -1,7 +1,7 @@
 <div class="parent-body ">
 <div class="content-body">
     <div class="row filteration">
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-12">
             <div class="form-group">
               <!-- <input type="text"
                 class="form-control" name="" id=""  [(ngModel)]="filterBy" (keyup)="filterCountry($event)"  aria-describedby="helpId" placeholder="🔍 Search for a country">
@@ -10,7 +10,7 @@
                 class="form-control searchcountry" name="" id=""  [(ngModel)]="searchCountry"  (keyup)="filterCountry($event)" aria-describedby="helpId" placeholder="🔍   Search for a country">
             </div>
         </div>
-        <div class="col-lg-2">
+        <div class="col-lg-2 col-6">
         <div class="form-group">
             <ng-select class="custom" [items]="regionOptions"
                    bindLabel="name"
@@ -22,18 +22,24 @@
         </div>
         </div>
     </div>
-    <div class="row justify-content-between fixheight">
-        <div class="card  m-3 country-cards border" style="width: 15rem;" *ngFor="let country of countries">
-            <img src="{{country.flag}}"class="card-img-top img-fluid" alt="...">
-            <div class="card-body">
-              <p class="card-title">{{country.name}}</p>
-              <p class="card-text"><span class="countries-info">Population:</span></p>
-              <p class="card-text"><span class="countries-info">Region:</span>{{country.region}}</p>
-              <p class="card-text"><span class="countries-info">Capital:</span>{{country.subregion}}</p>
-              <a  [routerLink]="['/countries', country['alpha3Code']]" class="stretched-link"></a>
-            </div>
-    
-    </div>
+    <div class="row justify-content-between d-flex fixheight">
+       
+            <div class="card  m-3 country-cards border" style="width: 15rem;" *ngFor="let country of countries">
+                <img src="{{country.flag}}"class="card-img-top img-fluid" alt="...">
+                <div class="card-body">
+                  <p class="card-title">{{country.name}}</p>
+                  <p class="card-text"><span class="countries-info">Population:</span>{{country.population}}</p>
+                  <p class="card-text"><span class="countries-info">Region:</span>{{country.region}}</p>
+                  <p class="card-text"><span class="countries-info">Capital:</span>{{country.subregion}}</p>
+                  <a  [routerLink]="['/countries', country['alpha3Code']]" class="stretched-link"></a>
+                </div>
+        
+     
+        </div>
+
+        
+     
+        
     
     </div>   
 </div>

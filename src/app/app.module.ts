@@ -1,4 +1,4 @@
-import { DataFilterPipe } from './search-pipe/filter-countries.pipe';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     CountriesComponent,
     CountriesDetailComponent,
-    DataFilterPipe
+
   ],
   imports: [
     BrowserModule,

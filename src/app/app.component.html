@@ -1,8 +1,22 @@
 
   <div class="heading d-flex justify-content-between justify-content-center">
-    <div class="logo"> Where in the world?🌍</div>
-    <div class="mode">light mode / dark mode</div>
-  </div>
+    <div class="logo"> Where in the world?</div>
+   <div class=" mode custom-control custom-switch">
+        <label><input type="radio" [(ngModel)]="theme" value="1" (change)= "changeTheme()"> <i class="fas fa-sun"></i> Light Mode</label>
+        <label><input type="radio" [(ngModel)]="theme" value="2" (change)= "changeTheme()"> <i class="fas fa-moon"></i> Dark Mode</label>
+      </div>
+    </div>
+  <!-- <nav class="nav justify-content-center float-right ">
+    <a class="nav-link active" href="https://coliff.github.io/dark-mode-switch/">Home</a>
+    <a class="nav-link" href="https://github.com/coliff/dark-mode-switch" target="_blank">GitHub</a>
+    <div class="nav-link">
+
+     
+
+      <script src="dark-mode-switch.min.js"></script>
+
+    </div>
+  </nav> -->
   
     <router-outlet></router-outlet>
   

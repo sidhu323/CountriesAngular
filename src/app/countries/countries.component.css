@@ -51,3 +51,18 @@
     min-height: calc(3.5em + .75rem + 2px);
     border-radius: 0;
 }
+[data-theme="dark"] .parent-body{
+    background-color: black;
+    color: white;
+}
+[data-theme="dark"] .card{
+    background-color: #303030;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    
+}
+[data-theme="dark"] .card-header{
+    background-color: #444;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    
+}
+
