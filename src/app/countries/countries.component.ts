@@ -39,17 +39,9 @@ filterCountry($event){
   })
 }
 
-  // getValidPath (name): string {
-  //   let matchFailsUrl = ['(', ')'];
-  //   for (let i = 0; i < matchFailsUrl.length; i++) {
-  //     name = name.replace(matchFailsUrl[i], '');      
-  //   }
-  //   return name
-  // } 
 
 
   onRegionSelected(selectRegionName:any):void{
-    console.log('this is os',selectRegionName);
     this.countryService.getCountryByRegion(selectRegionName.name).subscribe(data=>{
       this.countries = data;
     })

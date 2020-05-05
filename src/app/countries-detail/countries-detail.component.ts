@@ -31,24 +31,15 @@ export class CountriesDetailComponent implements OnInit {
       this.getBorderData();
     })
   }
-  
-  // getBorderCountries(item){
-  //   // console.log('border',$e.srcElement.innerText);
-  //   // this.countryService.getBorderCountriesDetail($e.srcElement.innerText).subscribe((data)=>{
-  //   //   this.borderCountry = data;
-  //     this.router.navigate([`countries/${item}`]);
-  // //   })
-  // }
+
   getBorderData():void{
     let bordersData = []
       this.borders.map(borderAlpha=>{
         this.countryService.getSpecificCountryByAlpha(borderAlpha).subscribe((data)=>{
-          console.log('received border data', data)
           bordersData.push(data)
-          console.log(bordersData)
           this.borders=[...bordersData]
         })
-        console.log('bordre', this.borders)
+       
       })
   }
 }

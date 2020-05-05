@@ -11,10 +11,9 @@ export class AppComponent {
   
   
   changeTheme(){
-    // let theme = this.theme;
-    console.log('change theme invoked');
+    
     let body = document.getElementsByTagName('body')[0];
-    console.log('classlist', body.classList)
+    
 
     if(body.classList.contains("dark-theme")){
       body.classList.remove("dark-theme");
