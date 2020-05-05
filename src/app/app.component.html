@@ -2,8 +2,7 @@
   <div class="heading d-flex justify-content-between justify-content-center">
     <div class="logo"> Where in the world?</div>
    <div class=" mode custom-control custom-switch">
-        <label><input type="radio" [(ngModel)]="theme" value="1" (change)= "changeTheme()"> <i class="fas fa-sun"></i> Light Mode</label>
-        <label><input type="radio" [(ngModel)]="theme" value="2" (change)= "changeTheme()"> <i class="fas fa-moon"></i> Dark Mode</label>
+        <label (click)= "changeTheme()"> <i class="fas fa-moon"></i>{{theme}}</label>
       </div>
     </div>
   <!-- <nav class="nav justify-content-center float-right ">

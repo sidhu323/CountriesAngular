@@ -7,20 +7,24 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'countries';
-  theme:'1';
+  theme='Dark Mode';
   
   
   changeTheme(){
-    let theme = this.theme;
+    // let theme = this.theme;
+    console.log('change theme invoked');
     let body = document.getElementsByTagName('body')[0];
+    console.log('classlist', body.classList)
 
-    if(theme==='1'){
+    if(body.classList.contains("dark-theme")){
       body.classList.remove("dark-theme");
       
       body.classList.add("light-theme");
+      this.theme="Dark Mode"
     }else{
       body.classList.remove("light-theme");
       body.classList.add("dark-theme");
+      this.theme="Light Mode"
     }
   }
 }
