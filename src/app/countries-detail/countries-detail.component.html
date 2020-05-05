@@ -13,7 +13,7 @@
             <div class="col-lg-4 col-md-6 col-12">
                 <img src="{{country?.flag}}" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
             </div>
-            <div class="col col-md-6 col-12 country-complete-info">
+            <div class="col-md-6   col-12 country-complete-info">
                 <h4 class="country-name">{{country?.name}}</h4>
                  <div class="country-info">
                      <div class="country-info-one">
@@ -34,12 +34,15 @@
                           </ul> 
                      </div>
                  </div>
-                 
-                 <div class="borders ">
-                     <span class="counntry-info-title">Border Countries:</span>
-
-                     <button  [routerLink]="['/countries', item.alpha3Code]" *ngFor="let item of borders" class="border-country-name" >{{item.name}}</button>
+                 <div class="row borders">
+                     <div class="col-lg-2 col-6">
+                        <span class="counntry-info-title">Border Countries:</span>
+                     </div>
+                     <div class="col-lg-10 col-6 border-countries">
+                        <button class=" btn  btn-light btn-outline m-1 border-country-name"  [routerLink]="['/countries', item.alpha3Code]" *ngFor="let item of borders"  >{{item.name}}</button>
+                     </div>
                  </div>
+               
             </div>
            
         </div>

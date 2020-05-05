@@ -7,25 +7,26 @@
     
 }
 
-.logo{
-font-weight: 900;
-margin-left:4rem;
-font-size: 20px;
-padding: 10px 0px 0px 0px;
-white-space: nowrap;
 
-}
-
-.mode{
-font-weight: 600;
-margin-right: 4rem;
-font-size: 14px;
-padding: 10px 0px 0px 0px;
-}
 
 .content-body{
     margin-left:4rem;
     margin-right: 4rem;
+}
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 65px !important;
+    align-items: flex-end !important;
+    box-shadow: 0px 1px 8px 0px rgb(177, 174, 174);
+   
+}
+.navbar-brand{
+    display: flex !important;
+    flex: 1 !important;
 }
 @media screen and (max-width: 500px) {
     .mode{
@@ -39,5 +40,15 @@ padding: 10px 0px 0px 0px;
         }
         .mode{
             white-space: nowrap;
+        }
+        .navbar {
+            position: relative;
+            display: flex !important;
+            
+            padding: 0 5px !important;
+        }
+        .navbar-brand{
+            display: flex !important;
+          
         }
   }
